@@ -1,5 +1,5 @@
 /* ==========================================================================
-   0. CSS CUSTOM VARIABLES (DESIGN TOKENS)
+   0. DESIGN SYSTEM TOKENS (DARK MODE DEFAULT VARIABLES)
    ========================================================================== */
 :root {
   /* Neutral Color Palette */
@@ -16,35 +16,56 @@
   --gray-800: #263330;
   --gray-900: #161e1c;
 
-  /* Brand Colors */
+  /* Theme Accents */
   --color-primary: hsl(142, 83%, 40%);
   --color-primary-dark: hsl(142, 83%, 30%);
   --color-primary-light: hsl(142, 83%, 90%);
   --color-secondary: hsl(258, 90%, 66%);
   --color-accent: hsl(28, 96%, 58%);
 
-  /* Semantic UI Colors */
-  --bg-body: var(--gray-50);
-  --bg-surface: var(--color-white);
-  --bg-muted: var(--gray-50);
-  --bg-glass-strong: rgba(255, 255, 255, 0.85);
-  --text-primary: var(--gray-900);
-  --text-secondary: var(--gray-700);
-  --text-muted: var(--gray-500);
-  --border-color: var(--gray-200);
-  --border-glass: rgba(226, 232, 240, 0.8);
+  /* Background Colors (Dark Mode Defaults) */
+  --bg-body: var(--gray-900);
+  --bg-surface: var(--gray-800);
+  --bg-card: hsl(142, 22%, 12%);
+  --bg-elevated: hsl(142, 20%, 14%);
+  --bg-muted: hsl(142, 18%, 16%);
+  --bg-inverse: var(--gray-50);
+  --bg-glass: hsla(142, 30%, 12%, 0.55);
+  --bg-glass-strong: hsla(142, 25%, 10%, 0.78);
+  --bg-overlay: hsla(142, 40%, 3%, 0.65);
+
+  /* Text Colors (Dark Mode Defaults) */
+  --text-primary: var(--gray-50);
+  --text-secondary: var(--gray-300);
+  --text-muted: var(--gray-400);
+  --text-inverse: var(--gray-900);
+  --text-on-primary: var(--color-white);
+  --text-link: hsl(142, 68%, 62%);
+
+  /* Border Colors (Dark Mode Defaults) */
+  --border-color: hsl(142, 15%, 22%);
+  --border-color-strong: hsl(142, 15%, 30%);
+  --border-glass: hsla(0, 0%, 100%, 0.08);
+
+  /* Shadow Colors (Dark Mode Defaults) */
+  --shadow-color: 160 60% 2%;
+  --shadow-xs: 0 1px 2px hsl(var(--shadow-color) / 0.4);
+  --shadow-sm: 0 2px 8px hsl(var(--shadow-color) / 0.45);
+  --shadow-md: 0 8px 28px hsl(var(--shadow-color) / 0.5);
+  --shadow-lg: 0 18px 48px hsl(var(--shadow-color) / 0.55);
+  --shadow-xl: 0 28px 72px hsl(var(--shadow-color) / 0.6);
 
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  --gradient-text: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
-  --gradient-footer: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  --gradient-primary: linear-gradient(135deg, hsl(142, 68%, 46%) 0%, hsl(152, 76%, 40%) 100%);
+  --gradient-secondary: linear-gradient(135deg, hsl(258, 90%, 66%) 0%, hsl(280, 85%, 62%) 100%);
+  --gradient-accent: linear-gradient(135deg, hsl(28, 96%, 60%) 0%, hsl(8, 90%, 60%) 100%);
+  --gradient-text: linear-gradient(135deg, hsl(142, 68%, 42%) 0%, hsl(258, 90%, 60%) 100%);
+  --gradient-footer: linear-gradient(180deg, hsl(142, 40%, 9%) 0%, hsl(142, 45%, 5%) 100%);
 
   /* Fonts */
   --font-display: "Poppins", "Segoe UI", sans-serif;
-  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
   
-  /* Font Sizes */
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
@@ -52,15 +73,11 @@
   --fs-lg: 1.25rem;
   --fs-xl: 1.5rem;
 
-  /* Font Weights */
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
   --fw-extrabold: 800;
-
-  /* Letter Spacing */
-  --ls-normal: 0;
   --ls-wide: 0.06em;
 
   /* Spacing Scale */
@@ -73,39 +90,26 @@
   --space-xl: 3rem;
   --space-2xl: 4.5rem;
 
-  /* Border Radii */
+  /* Radii & Container Layout */
   --radius-xs: 6px;
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-full: 999px;
-
-  /* Layout */
   --container-width: 1200px;
   --container-padding: clamp(1.25rem, 4vw, 3rem);
   --header-height: 76px;
 
-  /* Transitions */
+  /* Animation Speeds */
   --transition-fast: 150ms;
   --transition-base: 280ms;
   --transition-slow: 480ms;
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
-
-  /* Shadows */
-  --shadow-color: 160 30% 10%;
-  --shadow-sm: 0 2px 6px hsl(var(--shadow-color) / 0.08);
-  --shadow-md: 0 8px 24px hsl(var(--shadow-color) / 0.1);
-  --shadow-lg: 0 16px 40px hsl(var(--shadow-color) / 0.14);
-
-  /* Z-Index */
-  --z-dropdown: 100;
-  --z-sticky: 200;
   --glass-blur: 18px;
 }
 
 /* ==========================================================================
-   1. GLOBAL RESET & HELPER CLASSES
+   1. CORE STYLE RESETS & UTILITIES
    ========================================================================== */
 * {
   box-sizing: border-box;
@@ -128,7 +132,7 @@ body {
   padding-inline: var(--container-padding);
 }
 
-/* Visually hidden screen reader utility */
+/* Screen reader only helper */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -141,7 +145,7 @@ body {
   border: 0;
 }
 
-/* Icon baseline normalization */
+/* Icons styling */
 .icon {
   display: inline-block;
   width: 1.35em;
@@ -153,7 +157,7 @@ body {
   top: 2px;
 }
 
-/* Accessibility skip-to-main link */
+/* Accessibility skip-link */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -170,7 +174,7 @@ body {
 }
 
 /* ==========================================================================
-   2. ANNOUNCEMENT BAR
+   2. TOP ANNOUNCEMENT BAR
    ========================================================================== */
 .top-bar {
   background: var(--gradient-primary);
@@ -196,7 +200,7 @@ body {
 }
 
 /* ==========================================================================
-   3. STICKY HEADER & NAVBAR
+   3. STICKY NAVIGATION HEADER
    ========================================================================== */
 .header {
   position: sticky;
@@ -217,7 +221,7 @@ body {
   padding-block: var(--space-2xs);
 }
 
-/* Brand Logo */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -251,9 +255,9 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Desktop primary menu navigation */
+/* Desktop Links */
 .menu {
-  display: none; /* Mobile first hidden */
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -294,7 +298,7 @@ body {
   width: 100%;
 }
 
-/* Categories Mega Menu Dropdown */
+/* Dropdown Menu Categories */
 .mega-menu {
   position: static;
 }
@@ -353,12 +357,12 @@ body {
 }
 
 .dropdown-col a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-primary-light);
   padding-left: 4px;
 }
 
 /* ==========================================================================
-   4. USER PROFILE TRIGGER & BUTTONS
+   4. USER PROFILE AND BUTTON ACTIONS
    ========================================================================== */
 .header-buttons {
   display: flex;
@@ -432,11 +436,11 @@ body {
 }
 
 .user-dropdown a:hover {
-  background: var(--color-primary-light);
-  color: var(--color-primary-dark);
+  background: var(--color-primary);
+  color: var(--color-white);
 }
 
-/* Mobile Hamburger Button Toggle Logic */
+/* Hamburger mobile panel button toggle */
 .menu-toggle {
   position: absolute;
   opacity: 0;
@@ -480,7 +484,7 @@ body {
 }
 
 /* ==========================================================================
-   5. SEARCH & LOCATION UTILITY BAR
+   5. UTILITY SEARCH & ADDRESS BAR
    ========================================================================== */
 .utility-bar {
   display: flex;
@@ -508,6 +512,10 @@ body {
   border: none;
   cursor: pointer;
   flex-shrink: 0;
+}
+
+.location svg {
+  color: var(--color-primary);
 }
 
 .location-label {
@@ -538,6 +546,7 @@ body {
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
   background: var(--bg-muted);
+  color: var(--text-primary);
   font-size: var(--fs-sm);
   outline: none;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -563,7 +572,7 @@ body {
 }
 
 /* ==========================================================================
-   6. MOBILE EXPANSION PANEL
+   6. MOBILE VIEW LINKS DRAWER
    ========================================================================== */
 .mobile-menu {
   display: flex;
@@ -601,10 +610,10 @@ body {
 }
 
 /* ==========================================================================
-   7. MAIN CONTENT AREA
+   7. MAIN BODY CONTAINER CONTEXT
    ========================================================================== */
 main {
-  min-height: 40vh; /* Minimum layout context height */
+  min-height: 40vh;
 }
 
 /* ==========================================================================
@@ -703,7 +712,7 @@ main {
   height: 18px;
 }
 
-/* Contact Address */
+/* Footer Contact Details Address */
 .footer-contact-item {
   display: flex;
   gap: var(--space-2xs);
@@ -715,12 +724,11 @@ main {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  color: var(--color-white);
-  opacity: 0.8;
+  color: var(--color-primary);
   margin-top: 2px;
 }
 
-/* Footer Newsletter Form */
+/* Newsletter form input */
 .site-footer form input {
   padding: 0.7rem var(--space-sm);
   border-radius: var(--radius-xs);
@@ -736,7 +744,7 @@ main {
   border-color: var(--color-primary);
 }
 
-/* Footer bottom copyright details */
+/* Copyright Details & Payment Options */
 .footer-bottom {
   display: flex;
   flex-direction: column;
@@ -781,7 +789,7 @@ main {
 }
 
 /* ==========================================================================
-   9. MISCELLANEOUS INTERACTION ELEMENTS
+   9. INTERACTIVE ACCENTS & UTILITIES
    ========================================================================== */
 .back-to-top {
   position: fixed;
@@ -806,7 +814,6 @@ main {
   transform: translateY(-3px);
 }
 
-/* Cart overlay badges */
 .badge {
   display: inline-block;
   padding: 0.25em 0.5em;
@@ -824,7 +831,7 @@ main {
   color: var(--color-white);
 }
 
-/* Button Utilities */
+/* Dynamic Buttons */
 .button {
   display: inline-flex;
   align-items: center;

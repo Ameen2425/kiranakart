@@ -1715,7 +1715,7 @@ font {
   transform: rotate(-8deg) scale(1.08);
 }
 
-.category-card-icon i {
+.category-card-icon svg {
   width: 30px;
   height: 30px;
 }
@@ -1803,7 +1803,7 @@ font {
     transform var(--transition-fast) var(--ease-out-back);
 }
 
-.card-wishlist i {
+.card-wishlist svg {
   width: 17px;
   height: 17px;
 }
@@ -1935,7 +1935,7 @@ font {
   color: var(--text-muted);
 }
 
-.card-rating i {
+.card-rating svg {
   width: 13px;
   height: 13px;
   color: var(--color-warning);
@@ -1997,7 +1997,7 @@ font {
   transform: scale(1.02);
 }
 
-.card-add-btn i {
+.card-add-btn svg {
   width: 16px;
   height: 16px;
 }
@@ -4077,9 +4077,6 @@ small {
 }
 
 /* My first website styles! */
-div {
-  /* margin: 10px; */
-}
 center {
   display: block;
 }
@@ -4416,186 +4413,4 @@ font {
   color: var(--text-muted);
   margin-top: var(--space-md);
 }
-/* =========================================
-   FEATURED BRANDS
-   ========================================= */
-.brands-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-  justify-content: center;
-  margin-top: var(--space-xl);
-}
-.brand-card {
-  background: var(--surface-1);
-  border: 1px solid var(--border-color);
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-weight: var(--fw-bold);
-  font-size: var(--fs-lg);
-  color: var(--text-secondary);
-  transition: all var(--transition-normal);
-  cursor: pointer;
-}
-.brand-card i {
-  color: var(--color-primary);
-  font-size: 24px;
-}
-.brand-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--color-primary);
-  color: var(--text-primary);
-  box-shadow: var(--shadow-md);
-}
 
-/* =========================================
-   WHY CHOOSE US (FEATURES)
-   ========================================= */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-}
-.feature-card {
-  background: var(--surface-1);
-  padding: var(--space-xl);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  text-align: center;
-  transition: transform var(--transition-normal);
-}
-.feature-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--color-primary-light);
-}
-.feature-icon {
-  width: 70px;
-  height: 70px;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--space-md);
-  color: var(--color-white);
-  font-size: 28px;
-  box-shadow: 0 10px 20px rgba(10, 168, 62, 0.2);
-}
-.feature-card h3 {
-  margin-bottom: var(--space-xs);
-}
-.feature-card p {
-  font-size: var(--fs-sm);
-  line-height: 1.6;
-}
-
-/* =========================================
-   CUSTOMER REVIEWS
-   ========================================= */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
-  margin-top: var(--space-lg);
-}
-.review-card {
-  background: var(--surface-1);
-  padding: var(--space-lg);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-.review-stars i {
-  color: var(--color-warning);
-  font-size: 14px;
-}
-.review-text {
-  font-style: italic;
-  font-size: var(--fs-md);
-  flex-grow: 1;
-}
-.review-author {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-top: auto;
-}
-.author-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--color-primary-light);
-  color: var(--color-primary-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--fw-bold);
-  font-size: 18px;
-}
-.review-author h4 {
-  font-size: var(--fs-sm);
-  margin-bottom: 2px;
-}
-.review-author span {
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-}
-
-/* =========================================
-   APP DOWNLOAD BANNER
-   ========================================= */
-.app-download-banner {
-  background: var(--gradient-primary);
-  border-radius: var(--radius-xl);
-  padding: var(--space-2xl);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xl);
-  color: var(--color-white);
-  box-shadow: 0 20px 40px rgba(10, 168, 62, 0.2);
-}
-.app-download-content {
-  max-width: 600px;
-}
-.app-download-content h2 {
-  color: var(--color-white);
-  margin-bottom: var(--space-sm);
-  font-size: var(--fs-3xl);
-}
-.app-download-content p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: var(--fs-lg);
-  margin-bottom: var(--space-lg);
-}
-.app-buttons {
-  display: flex;
-  gap: var(--space-md);
-  flex-wrap: wrap;
-}
-.app-download-icon {
-  font-size: 150px;
-  color: rgba(255, 255, 255, 0.2);
-  transform: rotate(15deg);
-}
-
-@media (max-width: 768px) {
-  .app-download-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: var(--space-xl);
-  }
-  .app-buttons {
-    justify-content: center;
-  }
-  .app-download-icon {
-    display: none;
-  }
-}

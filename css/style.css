@@ -4313,104 +4313,92 @@ font {
 }
 
 /* ================= 3D CSS CAROUSEL ================= */
-.slider {
-  width: 100%;
+.carousel-3d {
+  position: relative;
   height: 380px;
-  perspective: 1200px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  margin-block: var(--space-xl);
+  justify-content: center;
+  perspective: 1400px;
 }
 
-.slider-stage {
-  width: 280px;
-  height: 320px;
+.carousel-3d__stage {
   position: relative;
+  width: 220px;
+  height: 300px;
   transform-style: preserve-3d;
-  animation: rotate3DCarousel 30s linear infinite;
+  animation: carouselSpin 24s linear infinite;
 }
 
-.slider:hover .slider-stage,
-.slider:focus-within .slider-stage {
+.carousel-3d:hover .carousel-3d__stage,
+.carousel-3d:focus-within .carousel-3d__stage {
   animation-play-state: paused;
 }
 
-@keyframes rotate3DCarousel {
-  0% { transform: translateZ(-380px) rotateY(0deg); }
-  100% { transform: translateZ(-380px) rotateY(360deg); }
+@keyframes carouselSpin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
 }
 
-.slider-card {
+.carousel-3d__card {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-md);
+  inset: 0;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  backface-visibility: visible;
-  opacity: 0.95;
-  transition: opacity var(--transition-base), box-shadow var(--transition-base);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  gap: var(--space-2xs);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--bg-glass-strong);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow var(--transition-base) var(--ease-standard);
 }
 
-.slider-card:hover {
-  opacity: 1;
-  box-shadow: 0 8px 32px rgba(var(--color-primary-rgb), 0.4);
+.carousel-3d__card:hover {
+  box-shadow: var(--shadow-glow-primary);
 }
 
-.slider-card .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
+/* Each card placed evenly around a 3D ring: rotateY(step) + translateZ(radius) */
+.carousel-3d__card:nth-child(1) { transform: rotateY(0deg) translateZ(300px); background: linear-gradient(160deg, hsla(152,68%,46%,0.22), var(--bg-glass-strong)); }
+.carousel-3d__card:nth-child(2) { transform: rotateY(60deg) translateZ(300px); background: linear-gradient(160deg, hsla(258,90%,66%,0.22), var(--bg-glass-strong)); }
+.carousel-3d__card:nth-child(3) { transform: rotateY(120deg) translateZ(300px); background: linear-gradient(160deg, hsla(28,96%,58%,0.22), var(--bg-glass-strong)); }
+.carousel-3d__card:nth-child(4) { transform: rotateY(180deg) translateZ(300px); background: linear-gradient(160deg, hsla(206,90%,56%,0.22), var(--bg-glass-strong)); }
+.carousel-3d__card:nth-child(5) { transform: rotateY(240deg) translateZ(300px); background: linear-gradient(160deg, hsla(4,86%,58%,0.2), var(--bg-glass-strong)); }
+.carousel-3d__card:nth-child(6) { transform: rotateY(300deg) translateZ(300px); background: linear-gradient(160deg, hsla(42,96%,55%,0.22), var(--bg-glass-strong)); }
 
-.slider-card .card-img-wrapper {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.carousel-3d__media {
+  width: 88px;
+  height: 88px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
   background: var(--gradient-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto var(--space-md) auto;
-  box-shadow: 0 10px 20px rgba(var(--color-primary-rgb), 0.4);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
 }
 
-.slider-card .card-img-wrapper .icon {
-  width: 65px;
-  height: 65px;
-  color: white;
-  display: block;
+.carousel-3d__media svg { width: 40px; height: 40px; }
+
+.carousel-3d__name {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
 }
 
-/* Position the 8 cards in a 3D circle */
-.slider-card:nth-child(1) { transform: rotateY(0deg) translateZ(380px); }
-.slider-card:nth-child(2) { transform: rotateY(45deg) translateZ(380px); }
-.slider-card:nth-child(3) { transform: rotateY(90deg) translateZ(380px); }
-.slider-card:nth-child(4) { transform: rotateY(135deg) translateZ(380px); }
-.slider-card:nth-child(5) { transform: rotateY(180deg) translateZ(380px); }
-.slider-card:nth-child(6) { transform: rotateY(225deg) translateZ(380px); }
-.slider-card:nth-child(7) { transform: rotateY(270deg) translateZ(380px); }
-.slider-card:nth-child(8) { transform: rotateY(315deg) translateZ(380px); }
+.carousel-3d__desc {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
 
-.slider-hint {
+.carousel-3d__hint {
   text-align: center;
   font-size: var(--fs-xs);
   color: var(--text-muted);
-  margin-top: var(--space-md);
+  margin-top: var(--space-sm);
 }
+
 

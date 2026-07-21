@@ -1,11 +1,6 @@
-/* My first website styles! */
-
-center {
-  display: block;
-}
-font {
-  font-family: "Comic Sans MS", cursive, sans-serif !important;
-}
+/* =========================================
+   MAIN APPLICATION STYLESHEET
+   ========================================= */
 /* css custom properties */
 /* Custom properties (variables) allow us to reuse colors, fonts, and spacing throughout our CSS easily. */
 :root {
@@ -680,13 +675,7 @@ font {
 }
 */
 
-/* My first website styles! */
-center {
-  display: block;
-}
-font {
-  font-family: "Comic Sans MS", cursive, sans-serif !important;
-}
+
 /* components */
 
 /* buttons */
@@ -1011,10 +1000,11 @@ font {
 }
 
 .logo-name {
-  background: var(--gradient-text);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff !important;
+  font-weight: var(--fw-extrabold);
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 .menu-toggle {
@@ -1363,8 +1353,9 @@ font {
   font-size: var(--fs-xs);
   font-weight: var(--fw-semibold);
 }
+/* Page-specific styles are loaded via index.css, about.css, products.css */
 
-/* hero section */
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -2863,68 +2854,56 @@ svg.form-field-icon {
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: var(--space-3xs);
+  gap: var(--space-2xs);
   font-size: var(--fs-xs);
   color: var(--text-muted);
   flex-wrap: wrap;
+  list-style: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb a {
+  color: hsla(0, 0%, 100%, 0.65);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 .breadcrumb a:hover {
-  color: var(--color-primary-dark);
-}
-
-.breadcrumb li:not(:last-child)::after {
-  content: "/";
-  margin-left: var(--space-3xs);
-  color: var(--border-color-strong);
+  color: var(--color-white);
 }
 
 .breadcrumb li {
-  display: flex;
-  gap: var(--space-3xs);
-}
-
-/* page header banner (used by inner pages) */
-.page-banner {
-  background-image: var(--gradient-hero);
-  background-attachment: fixed;
-  color: var(--color-white);
-  padding-block: var(--space-xl) var(--space-lg);
-  text-align: center;
-}
-
-.page-banner h1 {
+  display: inline-flex;
+  align-items: center;
+  background: transparent !important;
+  box-shadow: none !important;
   color: var(--color-white);
 }
-.page-banner p {
-  color: hsla(0, 0%, 100%, 0.75);
-}
 
-@media (max-width: 1023px) {
-  .page-banner {
-    background-attachment: scroll;
-  }
-}
-
-/* back to top */
 .back-to-top {
   position: fixed;
-  right: var(--space-md);
-  bottom: var(--space-md);
+  bottom: 2rem;
+  right: 2rem;
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  background: hsl(152, 70%, 42%);
+  color: var(--color-white);
   display: grid;
   place-items: center;
-  background: var(--gradient-primary);
-  color: var(--color-white);
-  box-shadow: var(--shadow-lg);
-  z-index: var(--z-toast);
-  transition: transform var(--transition-base) var(--ease-out-back);
+  font-size: 1.1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform var(--transition-base) var(--ease-out-back), background-color var(--transition-fast);
 }
 
 .back-to-top:hover {
-  transform: translateY(-4px) scale(1.06);
+  transform: translateY(-4px) scale(1.08);
+  background: hsl(152, 75%, 48%);
+  color: var(--color-white);
 }
 
 /* mission / vision split (about page) */
@@ -4076,13 +4055,7 @@ small {
   background: blue;
 }
 
-/* My first website styles! */
-center {
-  display: block;
-}
-font {
-  font-family: "Comic Sans MS", cursive, sans-serif !important;
-}
+
 /* responsive breakpoints */
 
 /* 375px+ */

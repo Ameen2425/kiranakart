@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- ================= META / SEO ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offers Coming Soon | KiranaKart</title>
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/offer.css" />
+</head>
+
+<body>
+  <a id="top"></a>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ================= BRIGHT GREEN TOP BAR ================= -->
+  <div class="top-bar" style="background: hsl(152, 70%, 42%); color: #0a0e0c; font-weight: 600;">
+    <p class="top-text" style="color: white;">
+      <i class="fa-solid fa-truck"></i>
+      <strong>Free delivery</strong> &nbsp;on your first order &mdash; use code&nbsp;<strong>WELCOME50</strong>&nbsp;for 50% off!
+    </p>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <div class="site-header">
+    <div class="header">
+      <input type="checkbox" id="mobile-menu-btn" class="menu-toggle" />
+      <div class="container navbar">
+        <a href="index.html" class="logo">
+          <span class="logo-icon" style="margin-right: 8px; display: flex; align-items: center">
+            <img src="images/logo.png" width="36" height="36" style="border-radius: 50%; object-fit: cover" alt="Logo" />
+          </span>
+          <span class="logo-name">KiranaKart</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="menu">
+          <a href="index.html" class="menu-link">Home</a>
+          <a href="about.html" class="menu-link">About</a>
+          <div class="mega-menu">
+            <a href="products.html" class="menu-link">
+              Categories
+              <i class="fa-solid fa-chevron-down" style="display: inline-flex; align-items: center; margin-left: 4px; font-size: 11px;"></i>
+            </a>
+            <div class="dropdown">
+              <div class="dropdown-col">
+                <h6>Fresh Produce</h6>
+                <ul>
+                  <li><a href="products.html#vegetables">Vegetables</a></li>
+                  <li><a href="products.html#fruits">Fruits</a></li>
+                  <li><a href="products.html#groceries">Groceries</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <h6>Dairy &amp; Bakery</h6>
+                <ul>
+                  <li><a href="products.html#dairy">Dairy</a></li>
+                  <li><a href="products.html#bakery">Bakery</a></li>
+                  <li><a href="products.html#frozen-foods">Frozen Foods</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-col">
+                <h6>Snacks &amp; More</h6>
+                <ul>
+                  <li><a href="products.html#snacks">Snacks</a></li>
+                  <li><a href="products.html#beverages">Beverages</a></li>
+                  <li><a href="products.html#personal-care">Personal Care</a></li>
+                  <li><a href="products.html#household">Household</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <a href="products.html" class="menu-link">Products</a>
+          <a href="offer.html" class="menu-link is-active">Offers</a>
+          <a href="cart.html" class="menu-link">
+            Cart
+            <span class="badge badge-gradient" style="padding: 0.1em 0.55em; font-size: 10px; margin-left: 4px; vertical-align: 2px;">
+              <span data-cart-count>0</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="header-buttons">
+          <div class="user-menu" style="z-index: 999;">
+            <button type="button" class="header-icon">
+              <i class="fa-regular fa-user"></i>
+            </button>
+            <div class="user-dropdown" data-account-panel>
+              <a href="login.html"><i class="fa-regular fa-user"></i> Login</a>
+              <a href="signup.html"><i class="fa-regular fa-user"></i> Sign Up</a>
+            </div>
+          </div>
+        </div>
+
+        <label for="mobile-menu-btn" class="mobile-menu-btn">
+          <i class="fa-solid fa-bars icon-menu"></i>
+          <i class="fa-solid fa-xmark icon-close"></i>
+        </label>
+      </div>
+
+      <!-- Utility bar -->
+      <div class="container utility-bar">
+        <button type="button" class="location">
+          <i class="fa-solid fa-location-dot" style="color: var(--color-primary);"></i>
+          <span class="location-label">Deliver to</span>
+          <span>Koramangala, Bengaluru</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <form class="search" action="products.html" method="get" style="position: relative; flex: 1; display: flex; align-items: center;">
+          <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:18px; top:50%; transform:translateY(-50%); color:#888; font-size: 14px;"></i>
+          <label for="site-search" class="sr-only">Search for groceries</label>
+          <input type="search" id="site-search" name="search" style="padding-left:48px; padding-right:110px; width: 100%; border-radius: var(--radius-full); height: 44px; background: hsla(0, 0%, 100%, 0.05); border: 1px solid var(--border-color); color: var(--color-white); font-size: var(--fs-xs);" placeholder="Search for fruits, milk, bread...">
+          <button type="submit" class="button main-button small-button" style="position: absolute; right: 4px; top: 50%; transform: translateY(-50%); border-radius: var(--radius-full); padding: 0.4rem 1.15rem;">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+    <!-- ================= HERO OFFERS BANNER WITH ANIMATED DOTS ================= -->
+    <div class="offer-hero">
+
+      <!-- Moving Background Dots Element -->
+      <div class="offer-hero-dots"></div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+
+        <!-- Big Green Center Circle -->
+        <div class="offer-main-circle">
+          <span class="offer-circle-percent">%</span>
+          <span class="offer-circle-soon">SOON</span>
+        </div>
+
+        <!-- Eyebrow Pill -->
+        <div>
+          <span class="offer-eyebrow">
+            <i class="fa-solid fa-percent" style="font-size: 10px; opacity: 0.7;"></i>
+            Something Big Is Brewing
+          </span>
+        </div>
+
+        <!-- Title -->
+        <h1 style="font-size: var(--fs-4xl); font-weight: var(--fw-extrabold); color: var(--color-white); margin-bottom: var(--space-xs); font-family: var(--font-display); line-height: 1.1;">
+          Exciting <span class="offer-gradient-text">Offers</span><br />
+          Are Coming Soon
+        </h1>
+
+        <!-- Subtitle -->
+        <p style="max-width: 520px; margin-inline: auto; color: hsla(0, 0%, 100%, 0.75); font-size: var(--fs-sm); line-height: 1.6; margin-bottom: var(--space-lg);">
+          We're cooking up flash sales, combo deals and exclusive discounts.<br />
+          Subscribe below and be the first to grab them the moment they go live.
+        </p>
+
+        <!-- Countdown Timer -->
+        <div class="countdown">
+          <div class="countdown-unit">
+            <span class="countdown-num">03</span>
+            <span class="countdown-label">DAYS</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num">12</span>
+            <span class="countdown-label">HRS</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num">40</span>
+            <span class="countdown-label">MIN</span>
+          </div>
+        </div>
+
+        <!-- White Pill Capsule Newsletter Input Bar -->
+        <form action="#" method="get" class="offer-newsletter-capsule">
+          <label for="notify-email" class="sr-only">Email address</label>
+          <input type="email" id="notify-email" name="email" placeholder="Enter your email address" required />
+          <button type="submit">
+            Notify Me
+          </button>
+        </form>
+
+        <!-- Back to Home Button -->
+        <div>
+          <a href="index.html" class="btn-back-home">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Home
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <div class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo" style="color: var(--color-white); margin-bottom: var(--space-sm); display: inline-flex;">
+          <span class="logo-icon" style="margin-right: 8px; display: flex; align-items: center">
+            <img src="images/logo.png" width="36" height="36" style="border-radius: 50%; object-fit: cover" alt="Logo" />
+          </span>
+          <span>KiranaKart</span>
+        </a>
+        <p>
+          Fresh groceries delivered in minutes. Quality you can trust, speed you can count on.
+        </p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="offer.html">Today's Offers</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="login.html">Login / Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Categories</h6>
+        <ul>
+          <li><a href="products.html#vegetables">Vegetables</a></li>
+          <li><a href="products.html#fruits">Fruits</a></li>
+          <li><a href="products.html#dairy">Dairy</a></li>
+          <li><a href="products.html#snacks">Snacks &amp; Beverages</a></li>
+          <li><a href="products.html#personal-care">Personal Care</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h6>Contact Us</h6>
+        <address style="font-style: normal; display: flex; flex-direction: column; gap: var(--space-2xs);">
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>4th Block, Koramangala, Bengaluru, India 560034</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+911800123456">+91 1800-123-456</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:support@kiranakart.com">support@kiranakart.com</a>
+          </div>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h6>Newsletter</h6>
+        <p>Get fresh deals in your inbox every week.</p>
+        <form action="#" method="get" style="margin-top: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-2xs);">
+          <label for="footer-email" class="sr-only">Email address</label>
+          <input type="email" id="footer-email" name="email" placeholder="you@example.com" style="padding: 0.7rem var(--space-sm); border-radius: var(--radius-md); background: hsla(0, 0%, 100%, 0.08); border: 1px solid hsla(0, 0%, 100%, 0.2); color: var(--color-white);" required />
+          <button type="submit" class="button main-button small-button">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div class="payment-icons">
+        <span>Visa</span>
+        <span>Mastercard</span>
+        <span>UPI</span>
+        <span>PayPal</span>
+        <span>Apple Pay</span>
+      </div>
+      <div>
+        <a href="about.html">About</a>
+        &nbsp;&middot;&nbsp;
+        <a href="products.html">Products</a>
+        &nbsp;&middot;&nbsp;
+        <a href="offer.html">Offers</a>
+      </div>
+
+      <p>
+        &copy; 2026 KiranaKart Grocery Technologies Pvt. Ltd. All rights reserved.
+      </p>
+    </div>
+  </div>
+
+  <a href="#top" class="back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+</body>
+</html>

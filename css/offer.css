@@ -1,0 +1,199 @@
+/* =========================================
+   OFFERS PAGE STYLES (offer.css)
+   ========================================= */
+
+/* Hero Container with Dotted Grid Background */
+.offer-hero {
+  position: relative;
+  min-height: calc(100vh - 180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: 
+    radial-gradient(ellipse 75% 65% at 18% 35%, hsla(152, 65%, 16%, 0.95) 0%, transparent 70%),
+    radial-gradient(ellipse 65% 55% at 85% 25%, hsla(42, 50%, 14%, 0.9) 0%, transparent 65%),
+    linear-gradient(180deg, #09140f 0%, #060a08 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding-block: var(--space-3xl);
+  text-align: center;
+}
+
+/* Animated Background Dots Effect */
+.offer-hero-dots {
+  position: absolute;
+  inset: -100px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  animation: moveDots 2.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes moveDots {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(24px);
+  }
+}
+
+/* Big Green Center Circle Badge */
+.offer-main-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto var(--space-lg);
+  border-radius: 50%;
+  background: hsl(152, 70%, 42%);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 40px hsla(152, 70%, 30%, 0.4);
+}
+
+.offer-circle-percent {
+  color: var(--color-white);
+  font-size: 3rem;
+  font-weight: var(--fw-bold);
+  font-family: var(--font-display);
+}
+
+.offer-circle-soon {
+  position: absolute;
+  top: 10px;
+  right: -5px;
+  background: hsl(152, 60%, 25%);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: var(--fw-bold);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Pill Eyebrow Badge */
+.offer-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: hsla(0, 0%, 100%, 0.06);
+  border: 1px solid hsla(0, 0%, 100%, 0.15);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-md);
+}
+
+/* Gradient Text for OFFERS */
+.offer-gradient-text {
+  background: linear-gradient(135deg, hsl(152, 80%, 65%) 0%, hsl(265, 85%, 66%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Countdown Timer Boxes */
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-block: var(--space-xl);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 95px;
+  padding: var(--space-md) var(--space-sm);
+  background: hsla(0, 0%, 100%, 0.06);
+  border: 1px solid hsla(0, 0%, 100%, 0.14);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.countdown-num {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.68rem;
+  color: hsla(0, 0%, 100%, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+  font-weight: var(--fw-semibold);
+}
+
+/* White Pill Capsule Newsletter Form */
+.offer-newsletter-capsule {
+  max-width: 520px;
+  margin: 0 auto var(--space-xl);
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: var(--radius-full);
+  padding: 6px 6px 6px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.offer-newsletter-capsule input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--gray-900);
+  outline: none;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+.offer-newsletter-capsule input::placeholder {
+  color: var(--gray-500);
+}
+
+.offer-newsletter-capsule button {
+  background: hsl(152, 70%, 42%);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.6rem;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.offer-newsletter-capsule button:hover {
+  background: hsl(152, 75%, 36%);
+}
+
+/* Back to Home Capsule Button */
+.btn-back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  background: hsla(0, 0%, 100%, 0.05);
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  color: var(--color-white);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.btn-back-home:hover {
+  background: hsla(0, 0%, 100%, 0.12);
+  border-color: var(--color-white);
+}

@@ -1,0 +1,211 @@
+/* =========================================
+   AUTHENTICATION PAGES STYLES (auth.css)
+   ========================================= */
+
+/* Main Auth Section with Dark Ambient Glow & Moving Dots */
+.auth-page {
+  position: relative !important;
+  min-height: calc(100vh - 140px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  background: 
+    radial-gradient(ellipse 75% 65% at 18% 35%, hsla(152, 65%, 16%, 0.95) 0%, transparent 70%),
+    radial-gradient(ellipse 65% 55% at 85% 25%, hsla(42, 50%, 14%, 0.9) 0%, transparent 65%),
+    linear-gradient(180deg, #09140f 0%, #060a08 100%) !important;
+  background-image: 
+    radial-gradient(ellipse 75% 65% at 18% 35%, hsla(152, 65%, 16%, 0.95) 0%, transparent 70%),
+    radial-gradient(ellipse 65% 55% at 85% 25%, hsla(42, 50%, 14%, 0.9) 0%, transparent 65%),
+    linear-gradient(180deg, #09140f 0%, #060a08 100%) !important;
+  padding-block: var(--space-3xl) !important;
+}
+
+/* Disable old style.css ::before pseudo element background conflict */
+.auth-page::before {
+  display: none !important;
+}
+
+/* Background Dots Pattern */
+.auth-page-dots {
+  position: absolute !important;
+  inset: -100px !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px) !important;
+  background-size: 24px 24px !important;
+  animation: moveDotsAuth 2s linear infinite !important;
+  pointer-events: none !important;
+}
+
+@keyframes moveDotsAuth {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(24px); }
+}
+
+/* Auth Card Container */
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: min(92%, 460px);
+  margin: 0 auto;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Top Icon Badge */
+.auth-header-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: hsl(152, 70%, 42%);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  box-shadow: 0 8px 24px hsla(152, 70%, 30%, 0.35);
+  overflow: hidden;
+}
+
+/* Pill Input Fields */
+.form-field {
+  position: relative;
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.form-field-input {
+  width: 100%;
+  height: 48px;
+  padding: 0.5rem 1.25rem 0.5rem 2.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: hsla(0, 0%, 100%, 0.04);
+  color: var(--color-white);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  outline: none;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.form-field-input::placeholder {
+  color: hsla(0, 0%, 100%, 0.45);
+}
+
+.form-field-input:focus {
+  border-color: hsl(152, 70%, 42%);
+  background: hsla(0, 0%, 100%, 0.07);
+}
+
+/* Input Icon inside Pill */
+i.form-field-icon {
+  position: absolute;
+  left: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.form-field-input:focus ~ i.form-field-icon {
+  color: hsl(152, 70%, 42%);
+}
+
+/* Password Strength Meter */
+.strength-meter {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.strength-meter span {
+  flex: 1;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: hsla(0, 0%, 100%, 0.12);
+  transition: background var(--transition-fast);
+}
+
+.strength-meter-medium span:nth-child(1) { background: hsl(42, 96%, 55%); }
+.strength-meter-medium span:nth-child(2) { background: hsl(42, 96%, 55%); }
+.strength-meter-strong span { background: hsl(152, 70%, 42%); }
+
+/* Checkbox & Terms */
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-size: 0.75rem;
+  color: hsla(0, 0%, 100%, 0.75);
+  margin-bottom: var(--space-lg);
+  cursor: pointer;
+  justify-content: center;
+}
+
+.checkbox-field input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: hsl(152, 70%, 42%);
+  cursor: pointer;
+}
+
+.checkbox-field a {
+  color: hsl(152, 80%, 62%);
+  text-decoration: none;
+}
+
+.checkbox-field a:hover {
+  text-decoration: underline;
+}
+
+/* Register Button (Bright Green Pill) */
+.btn-auth-submit {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: hsl(152, 70%, 42%);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px hsla(152, 70%, 30%, 0.35);
+  transition: all var(--transition-fast);
+}
+
+.btn-auth-submit:hover {
+  background: hsl(152, 75%, 48%);
+  transform: translateY(-2px);
+}
+
+/* Google Button */
+.btn-google-signup {
+  width: 100%;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: hsla(0, 0%, 100%, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--color-white);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.btn-google-signup:hover {
+  background: hsla(0, 0%, 100%, 0.08);
+  border-color: var(--color-white);
+}
